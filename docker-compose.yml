@@ -1,0 +1,40 @@
+version: '3'
+services:
+    sortinghat-db:
+        container_name: sortinghat-db
+        image: postgres
+        restart: always
+        environment:
+            - POSTGRES_DB=sortinghat
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
+        expose:
+            - 5432
+        logging:
+            driver: json-file
+        networks:
+          - sortinghat-network
+    sortinghat-app:
+        depends_on:
+            - sortinghat-db
+        container_name: sortinghat-app
+        build:
+            context: ./
+        image: sorting-hat:latest
+        entrypoint: /opt/sorting-hat/bin/sorting-hat-entrypoint.sh
+        ports:
+            - 8081:8081
+        expose:
+            - 8081
+        environment:
+            - "spring_datasource_url=jdbc:postgresql://sortinghat-db:5432/sortinghat"
+            - "spring_datasource_initialization_mode=always"
+        logging:
+            driver: json-file
+        networks:
+          - sortinghat-network
+networks:
+    sortinghat-network:
+        driver: bridge

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bridge - Chapéu seletor</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="font/hp/stylesheet.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Resultado</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a th:if="${casa}" class="nav-link js-scroll-trigger" href="#about">Sua casa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div id="resultado" style="display: none;" class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase" th:text="${casa}? ${casa.nome} : 'Trouxa' ">Casa</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5" th:text="${casa}? ${casa.descricao} : 'Aparentemente não há magia em você' ">Descrição</h2>
+        <a th:if="${casa}" href="#about" class="btn btn-primary js-scroll-trigger">Conheça sua casa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section th:if="${casa}" id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+          <div class="table-responsive">
+            <table th:if="${alunos}" class="table table-dark">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">E-mail</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="aluno : ${alunos}">
+                <th scope="row" th:text="${aluno.id}">ID</th>
+                <td th:text="${#strings.capitalizeWords(#strings.replace(#strings.replace(aluno.email, '@bridge.ufsc.br', ''),'.',' '))}">Nome</td>
+                <td th:text="${aluno.email}">E-mail</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Laboratório Bridge 2019
+    </div>
+  </footer>
+
+  <div class="modal fade bd-example-modal-lg" id="sorting-hat" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <h2 class="spacer">O Chapéu Seletor está pensando... </h2>
+        <img src="img/sorting-hat.png" class="img-fluid" alt="sorting-hat">
+        <img id="loading" src="img/loading.gif" alt="loading">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+  <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
