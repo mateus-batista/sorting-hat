@@ -6,13 +6,13 @@
 
 #mainNav {
   min-height: 56px;
-  background-color: #fff;
+  background-color: #262627;
 }
 
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #64a19d;
+  color: #fffcf7;
   border: 1px solid #64a19d;
 }
 
@@ -21,7 +21,7 @@
 }
 
 #mainNav .navbar-brand {
-  color: #161616;
+  color: #fff;
   font-weight: 700;
   padding: .9rem 0;
 }
@@ -63,26 +63,28 @@
     color: white;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+   background-color: #262627;
+   
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #161616;
+  	  color: #ffffff;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #161616;
+   	color: #ffffff;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #64a19d;
+      color: #6c757d;
+    
   }
   #mainNav.navbar-shrink .nav-link:active {
     color: #467370;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #64a19d;
+    color: #6c757d;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+   border-bottom: 0.25rem solid #6c757d;
   }
 }
 
@@ -112,6 +114,7 @@
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  color: #53595e;
 }
 
 .masthead h2 {
@@ -144,12 +147,18 @@
 }
 
 #sorting-hat{
-  background-color: rgba(0, 0, 0, 0.96);
+  backgroud-color: #fffcf7;
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+   border: 0;
+  
 }
 
 #loading {
   margin: auto;
-  max-width: 100px;
+  max-width: 70px;
+  max-height:70px;
+  width:auto;
+  height:auto;
 }
 
 .modal-content {
@@ -183,20 +192,24 @@ pre {
 }
 
 .btn-primary {
-  background-color: #64a19d;
+  background-color: #fffcf7;
+  color:#53595e;
+  
 }
 
 .btn-primary:hover {
-  background-color: #4f837f;
+ 	background-color: #d0cdc8;
+ 	color:#53595e;
+ 
 }
 
 .btn-primary:focus {
-  background-color: #4f837f;
-  color: white;
+  background-color: #fffcf7;
+  color:#cdc7c7;
 }
 
 .btn-primary:active {
-  background-color: #467370 !important;
+  background-color: #d0cdc9 !important ;
 }
 
 .about-section {
@@ -303,7 +316,7 @@ pre {
 }
 
 .contact-section .social a:active {
-  color: #fff;
+  color: #ffffff;
 }
 
 body {
@@ -334,4 +347,10 @@ a:focus, a:hover {
 
 footer {
   padding: 5rem 0;
+}
+
+#footer-chapeu{
+	color: #000000;
+	font-family: 'Varela Round';
+	
 }
