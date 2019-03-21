@@ -107,9 +107,9 @@
 }
 
 .masthead h1 {
-  font-family: 'harry_pregular';
-  font-size: 2.5rem;
-  line-height: 2.5rem;
+  font-family: 'Nunito';
+  font-size: 2.0rem;
+  line-height: 2.0rem;
   letter-spacing: 0.8rem;
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;

@@ -51,7 +51,11 @@
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div id="resultado" style="display: none;" class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase" th:text="${casa}? ${casa.nome} : 'Trouxa' ">Casa</h1>
+		<div class="text-center" th:if="${casa}">
+			<img th:src="@{'/img/' + ${casa.nome} + '.png'}" width="200" height="220"/>
+		</div>
+		<br/>
+        <h1 class="mx-auto my-0 text-uppercase" th:text="${casa} ? ${casa.nome} : 'Trouxa' ">Casa</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5" th:text="${casa}? ${casa.descricao} : 'Aparentemente não há magia em você' ">Descrição</h2>
         <a th:if="${casa}" href="#about" class="btn btn-primary js-scroll-trigger">Conheça sua casa</a>
       </div>
@@ -97,7 +101,10 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <h2 class="spacer">O Chapéu Seletor está pensando </h2>
-        <img src="img/sorting-hat.png" class="img-fluid" alt="sorting-hat">
+		<br/><br/>
+		<div class="text-center">
+        	<img src="img/sorting-hat.png" alt="sorting-hat" width="289" height="289">
+		</div>
         <img id="loading" src="img/loading.gif" alt="loading">
          <h2 class="spacer" id="footer-chapeu">...hmm, interessante </h2>
       </div>
