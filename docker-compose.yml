@@ -31,6 +31,7 @@ services:
         environment:
             - "spring_datasource_url=jdbc:postgresql://sortinghat-db:5432/sortinghat"
             - "spring_datasource_initialization_mode=always"
+            - "spring_security_oauth2_client_registration_google_redirect_uri=https://chapeuseletor.bridge.ufsc.br/login/oauth2/code/google"
         logging:
             driver: json-file
         networks:
