@@ -1,5 +1,5 @@
 insert into casa values
-(1, 'Grifinoria', 'Sua morada é a Grifinória! Casa onde habitam os corações indômitos. Ousadia, sangue-frio e nobreza destacam os alunos da Grifinória dos demais.'),
+(1, 'Grifinória', 'Sua morada é a Grifinória! Casa onde habitam os corações indômitos. Ousadia, sangue-frio e nobreza destacam os alunos da Grifinória dos demais.'),
 (2, 'Lufa-Lufa', 'É na Lufa-Lufa que você vai morar! Onde seus moradores são justos, leais, pacientes, sinceros, sem medo da dor.'),
 (3, 'Corvinal', 'Será a velha e sábia Corvinal, A casa dos que tem a mente sempre alerta, onde os homens de grande espírito e saber sempre encontrarão companheiros seus iguais.'),
 (4, 'Sonserina', 'A Sonserina será a sua casa! E ali fará seus verdadeiros amigo. Homens de astúcia que usam quaisquer meios para atingir os fins que antes colimaram.'),

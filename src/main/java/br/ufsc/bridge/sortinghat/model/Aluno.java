@@ -6,7 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 
 	@Id
 	private Long id;
@@ -64,5 +64,10 @@ public class Aluno {
 
 	public String getNome() {
 		return this.nome;
+	}
+
+	@Override
+	public int compareTo(Aluno o) {
+		return this.nome.compareTo(o.nome);
 	}
 }
