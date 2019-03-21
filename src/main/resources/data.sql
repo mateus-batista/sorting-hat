@@ -82,5 +82,5 @@ insert into aluno (email, id_casa, nome) values
 
 
 insert into aluno (email, id_casa, nome) values
-('mateus.batista@bridge.ufsc.br',5, 'Matheus Batista'),
+('mateus.batista@bridge.ufsc.br',5, 'Mateus Batista'),
 ('osvaldo@bridge.ufsc.br',5, 'Osvaldo da Rocha');
