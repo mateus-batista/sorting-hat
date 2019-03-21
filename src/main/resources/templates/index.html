@@ -52,7 +52,7 @@
     <div class="container d-flex h-100 align-items-center">
       <div id="resultado" style="display: none;" class="mx-auto text-center">
 		<div class="text-center" th:if="${casa}">
-			<img th:src="@{'/img/' + ${casa.nome} + '.png'}" width="200" height="220"/>
+			<img th:src="@{'/img/' + ${#strings.replace(casa.nome,'ó','o')} + '.png'}" width="200" height="220"/>
 		</div>
 		<br/>
         <h1 class="mx-auto my-0 text-uppercase" th:text="${casa} ? ${casa.nome} : 'Trouxa' ">Casa</h1>
