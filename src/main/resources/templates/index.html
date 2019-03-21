@@ -67,15 +67,13 @@
             <table th:if="${alunos}" class="table table-dark">
               <thead>
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">E-mail</th>
               </tr>
               </thead>
               <tbody>
               <tr th:each="aluno : ${alunos}">
-                <th scope="row" th:text="${aluno.id}">ID</th>
-                <td th:text="${#strings.capitalizeWords(#strings.replace(#strings.replace(aluno.email, '@bridge.ufsc.br', ''),'.',' '))}">Nome</td>
+                <th scope="row" th:text="${aluno.nome}">Nome</th>
                 <td th:text="${aluno.email}">E-mail</td>
               </tr>
               </tbody>

@@ -2,7 +2,7 @@ const sortear = () => {
 
     let bridge = [
         {sala: "101", bridgers: ["deborawernke@bridge.ufsc.br","delrobson@bridge.ufsc.br","suleiman@bridge.ufsc.br","gustavolobo@bridge.ufsc.br","jades@bridge.ufsc.br","celio@bridge.ufsc.br"]},
-        {sala: "108", bridgers: ["ewerton@bridge.ufsc.br","burigo@bridge.ufsc.br","wag@bridge.ufsc.br","paulo@bridge.ufsc.br"]},
+        {sala: "108", bridgers: ["ewerton@bridge.ufsc.br","burigo@bridge.ufsc.br","wag@bridge.ufsc.br"]},
         {sala: "109", bridgers: ["rafael@bridge.ufsc.br","amanda.aquino@bridge.ufsc.br","fernando@bridge.ufsc.br","leonardo.phildeg@bridge.ufsc.br","leticia@bridge.ufsc.br","carlosrebelato@bridge.ufsc.br","saldanha@bridge.ufsc.br","anna.victoria@bridge.ufsc.br"]},
         {sala: "303", bridgers: ["ricardo@bridge.ufsc.br","fernanda.mioto@bridge.ufsc.br","lucasrosaj@bridge.ufsc.br","rahony@bridge.ufsc.br","fabricio.matos@bridge.ufsc.br","otavioribeiro@bridge.ufsc.br","jobe@bridge.ufsc.br","diogo@bridge.ufsc.br","juliana@bridge.ufsc.br","leonardoschluter@bridge.ufsc.br"]},
         {sala: "304", bridgers: ["fabiosr@bridge.ufsc.br","nathanwerlich@bridge.ufsc.br","fabiopreisler@bridge.ufsc.br","mirian@bridge.ufsc.br","monique@bridge.ufsc.br","silvia@bridge.ufsc.br","angelo@bridge.ufsc.br","chris@bridge.ufsc.br","gessica@bridge.ufsc.br"]},
