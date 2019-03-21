@@ -7,6 +7,7 @@ create table casa(
 
 create table aluno (
 	id SERIAL,
+	nome VARCHAR(400),
 	email VARCHAR(255),
 	id_casa INT,
 	primary key(id),

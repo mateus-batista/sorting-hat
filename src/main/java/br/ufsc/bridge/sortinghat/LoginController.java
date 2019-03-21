@@ -1,6 +1,8 @@
 package br.ufsc.bridge.sortinghat;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +54,8 @@ public class LoginController {
 			clientRegistrations = (Iterable<ClientRegistration>) this.clientRegistrationRepository;
 		}
 
-		clientRegistrations.forEach(registration -> this.oauth2AuthenticationUrls.put(registration.getClientName(), authorizationRequestBaseUri + "/" + registration.getRegistrationId()));
+		clientRegistrations
+				.forEach(registration -> this.oauth2AuthenticationUrls.put(registration.getClientName(), authorizationRequestBaseUri + "/" + registration.getRegistrationId()));
 		model.addAttribute("urls", this.oauth2AuthenticationUrls);
 
 		return "oauth_login";
@@ -85,7 +88,9 @@ public class LoginController {
 			Aluno aluno = this.alunoRepository.findByEmail(userAttributes.get("email").toString());
 			if (aluno != null) {
 				model.addAttribute("casa", aluno.getCasa());
-				model.addAttribute("alunos",  this.alunoRepository.findByCasa(aluno.getCasa()));
+				List<Aluno> alunos = this.alunoRepository.findByCasa(aluno.getCasa());
+				Collections.sort(alunos);
+				model.addAttribute("alunos", alunos);
 			}
 		}
 
