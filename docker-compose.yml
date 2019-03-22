@@ -25,9 +25,9 @@ services:
         image: sorting-hat:latest
         entrypoint: /opt/sorting-hat/bin/sorting-hat-entrypoint.sh
         ports:
-            - 8081:8081
+            - 8080:8080
         expose:
-            - 8081
+            - 8080
         environment:
             - "SPRING_PROFILES_ACTIVE=prod"
         logging:
