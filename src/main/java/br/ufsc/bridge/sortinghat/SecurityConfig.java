@@ -28,5 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.defaultSuccessUrl("/resultado", true)
 				.failureUrl("/login_failure")
 				.redirectionEndpoint().baseUri("/login/oauth2/code/*");
+
+		http.headers().frameOptions().sameOrigin();
 	}
 }
