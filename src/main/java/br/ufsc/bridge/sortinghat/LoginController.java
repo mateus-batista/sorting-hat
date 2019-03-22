@@ -45,7 +45,7 @@ public class LoginController {
 		return "sorteador";
 	}
 
-	@GetMapping("/oauth_login")
+	@GetMapping("/login")
 	public String getLoginPage(Model model) {
 		Iterable<ClientRegistration> clientRegistrations = null;
 		ResolvableType type = ResolvableType.forInstance(this.clientRegistrationRepository)
@@ -58,14 +58,14 @@ public class LoginController {
 				.forEach(registration -> this.oauth2AuthenticationUrls.put(registration.getClientName(), authorizationRequestBaseUri + "/" + registration.getRegistrationId()));
 		model.addAttribute("urls", this.oauth2AuthenticationUrls);
 
-		return "oauth_login";
+		return "login";
 	}
 
 	@GetMapping("/resultado")
 	public String getIndex(Model model, OAuth2AuthenticationToken authentication) {
 
 		if (authentication == null) {
-			return "redirect:/oauth_login";
+			return "redirect:/login";
 		}
 
 		OAuth2AuthorizedClient client = this.authorizedClientService.loadAuthorizedClient(authentication.getAuthorizedClientRegistrationId(), authentication.getName());

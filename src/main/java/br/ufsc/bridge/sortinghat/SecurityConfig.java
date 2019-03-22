@@ -11,7 +11,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/oauth_login", "/login/**", "/login_failure", "/sorteador", "/vendor/**", "/css/**", "/img/**", "/js/**", "/font/**")
+				.antMatchers("/oauth_login", "/login", "/login/**", "/login_failure", "/sorteador", "/vendor/**", "/css/**", "/img/**", "/js/**", "/font/**")
 				.permitAll()
 				.anyRequest()
 				.authenticated()
@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.deleteCookies("JSESSIONID")
 				.and()
 				.oauth2Login()
-				.loginPage("/oauth_login")
+				.loginPage("/login")
 				.defaultSuccessUrl("/resultado", true)
 				.failureUrl("/login_failure")
 				.redirectionEndpoint().baseUri("/login/oauth2/code/*");
