@@ -96,4 +96,10 @@ public class LoginController {
 
 		return "index";
 	}
+
+	@GetMapping("/login_failure")
+	public String login_failure(Model model) {
+		return "login_failure";
+	}
+
 }
