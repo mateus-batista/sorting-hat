@@ -8,6 +8,9 @@ services:
             - POSTGRES_DB=sortinghat
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=
+        build:
+            context: ./docker
+            dockerfile: Dockerfile-db
         ports:
             - 5432:5432
         expose:
@@ -22,6 +25,7 @@ services:
         container_name: sortinghat-app
         build:
             context: ./
+            dockerfile: docker/Dockerfile-app
         image: sorting-hat:latest
         entrypoint: /opt/sorting-hat/bin/sorting-hat-entrypoint.sh
         ports:
