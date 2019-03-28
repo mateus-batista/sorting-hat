@@ -61,6 +61,11 @@ public class LoginController {
 		return "login";
 	}
 
+	@GetMapping("/")
+	public String getHome(Model model) {
+		return "redirect:/resultado";
+	}
+
 	@GetMapping("/resultado")
 	public String getIndex(Model model, OAuth2AuthenticationToken authentication) {
 
